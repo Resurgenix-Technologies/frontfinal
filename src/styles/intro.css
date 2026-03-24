@@ -1,0 +1,133 @@
+/* ===== Intro Animation ===== */
+#intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: opacity 0.7s ease;
+}
+#intro-overlay.done {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.intro-lens-wrapper {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lens-ring {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border: 1px solid #222;
+  border-radius: 50%;
+  animation: lensRing 1.8s ease-in-out;
+}
+.lens-ring-inner {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border: 1px solid #1a1a1a;
+  border-radius: 50%;
+}
+
+@keyframes lensRing {
+  0% { transform: scale(0.8); opacity: 0; }
+  40% { opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.iris-svg {
+  width: 200px;
+  height: 200px;
+}
+
+.iris-blade {
+  fill: #111;
+  stroke: #222;
+  stroke-width: 0.5;
+  transform-origin: center;
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.intro-scanline {
+  position: absolute;
+  width: 160px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation: introScan 1.4s ease-in-out;
+  opacity: 0;
+}
+
+@keyframes introScan {
+  0% { transform: translateY(-70px); opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { transform: translateY(70px); opacity: 0; }
+}
+
+.intro-rec {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  color: #444;
+  font-family: 'Courier New', monospace;
+}
+.intro-rec-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+  animation: recBlink 1s infinite;
+}
+
+.intro-text {
+  margin-top: 2rem;
+  font-size: 0.65rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #444;
+  font-family: 'Courier New', monospace;
+  animation: introTextFade 2.2s ease;
+}
+
+@keyframes introTextFade {
+  0% { opacity: 0; }
+  25% { opacity: 1; }
+  75% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.intro-timestamp {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  font-size: 0.6rem;
+  letter-spacing: 1px;
+  color: #333;
+  font-family: 'Courier New', monospace;
+}
+
+/* Zoom-through effect on iris container */
+.intro-lens-wrapper.zoom {
+  animation: irisZoom 0.8s ease-in forwards;
+}
+
+@keyframes irisZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(12); opacity: 0; }
+}

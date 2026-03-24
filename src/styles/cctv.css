@@ -1,0 +1,112 @@
+/* ===== CCTV Overlay Effects ===== */
+
+/* Corner brackets — CCTV viewfinder style */
+.cctv-corners {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+.cctv-corners::before,
+.cctv-corners::after,
+.cctv-corner-bl,
+.cctv-corner-br {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-color: var(--text-dim);
+  border-style: solid;
+  border-width: 0;
+  transition: border-color var(--transition);
+}
+.cctv-corners::before {
+  top: 12px; left: 12px;
+  border-top-width: 1px;
+  border-left-width: 1px;
+}
+.cctv-corners::after {
+  top: 12px; right: 12px;
+  border-top-width: 1px;
+  border-right-width: 1px;
+}
+.cctv-corner-bl {
+  bottom: 12px; left: 12px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+}
+.cctv-corner-br {
+  bottom: 12px; right: 12px;
+  border-bottom-width: 1px;
+  border-right-width: 1px;
+}
+
+/* Scanline sweep */
+.cctv-scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.04), transparent);
+  animation: scanlineSweep 4s linear infinite;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@keyframes scanlineSweep {
+  0% { top: 0; }
+  100% { top: 100%; }
+}
+
+/* REC dot */
+.cctv-rec {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  color: var(--text-dim);
+  z-index: 3;
+  pointer-events: none;
+}
+.cctv-rec-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+  animation: recBlink 1.5s ease-in-out infinite;
+}
+
+@keyframes recBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+/* Grid overlay */
+.cctv-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Timestamp */
+.cctv-timestamp {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  font-size: 0.6rem;
+  font-family: 'Courier New', monospace;
+  color: var(--text-dim);
+  letter-spacing: 1px;
+  z-index: 3;
+  pointer-events: none;
+}
