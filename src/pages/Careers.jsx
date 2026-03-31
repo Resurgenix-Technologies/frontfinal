@@ -12,10 +12,28 @@ const founders = [
     image: '/founders/founder1.jpg',
   },
   {
+    name: 'Anushka Mukherjee',
+    role: 'Co-Founder & Creative Technologist',
+    bio: 'Shaping the future of intelligent infrastructure through AI and product innovation.',
+    image: '/founders/founder3.jpg',
+  },
+  {
     name: 'Avijit Bhadra',
-    role: 'Co-Founder & CTO',
+    role: 'Co-Founder & CPO',
     bio: 'Architecting scalable computer vision systems and leading engineering innovation.',
     image: '/founders/founder2.png',
+  },
+  {
+    name: 'Swapnil Shaw',
+    role: 'Co-Founder & CIO',
+    bio: 'Spearheading AI-powered transformation in modern digital infrastructure',
+    image: '/founders/founder4.jpg',
+  },
+  {
+    name: 'Souvik Dhar',
+    role: 'Co-Founder & Operations Head',
+    bio: 'Overseeing end-to-end operations, ensuring optimized processes and sustainable growth',
+    image: '/founders/founder5.jpg',
   },
 ];
 
