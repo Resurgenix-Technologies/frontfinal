@@ -13,13 +13,14 @@ export default function Navbar({ visible }) {
     );
 
     return (
-        <nav className={`navbar ${visible ? "show" : ""}`}>
+        <nav className={`navbar ${visible ? "show" : ""}`} role="navigation" aria-label="Main navigation">
             <Link
                 to="/"
                 className="nav-logo"
                 onClick={() => setMenuOpen(false)}
+                aria-label="Resurgenix Technologies — Home"
             >
-                <img className="logo-png" src="logo.png" />
+                <img className="logo-png" src="logo.png" alt="Resurgenix Technologies logo" loading="eager" />
                 {/* Text */}
                 <div className="logo-text">
                     <span className="resur">RESUR</span>
@@ -34,6 +35,17 @@ export default function Navbar({ visible }) {
                 <li>{scrollLink("hero", "Home")}</li>
                 <li>{scrollLink("what-we-do", "What We Do")}</li>
                 <li>{scrollLink("services", "Services")}</li>
+                <li>
+                    <Link
+                        to="/about"
+                        className={
+                            location.pathname === "/about" ? "active" : ""
+                        }
+                        onClick={() => setMenuOpen(false)}
+                    >
+                        About
+                    </Link>
+                </li>
                 <li>
                     <Link
                         to="/reviews"
@@ -71,7 +83,8 @@ export default function Navbar({ visible }) {
             <button
                 className="nav-hamburger"
                 onClick={() => setMenuOpen(!menuOpen)}
-                aria-label="Toggle navigation"
+                aria-label="Toggle navigation menu"
+                aria-expanded={menuOpen}
             >
                 <span></span>
                 <span></span>

@@ -1,4 +1,3 @@
-import { submitToSheet } from '../config/sheets';
 import '../styles/contact.css';
 
 export default function Contact({ onToast }) {

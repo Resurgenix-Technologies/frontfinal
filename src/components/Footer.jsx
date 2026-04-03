@@ -3,7 +3,7 @@ import '../styles/footer.css';
 
 export default function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer" role="contentinfo">
       <div className="footer-inner">
         <div className="footer-top">
           <div className="footer-brand">
@@ -12,19 +12,32 @@ export default function Footer() {
             </div>
             <p>
               Transforming traditional CCTV infrastructure into intelligent
-              automation systems through advanced AI-powered computer vision
-              and real-time operational analytics.
+              automation systems through advanced AI-powered computer vision,
+              industry automation workflows, and QR dining solutions.
             </p>
+            <div className="footer-contact-info" style={{ marginTop: '1rem' }}>
+              <p style={{ fontSize: '0.82rem', color: '#aaa', lineHeight: 1.8 }}>
+                <strong style={{ color: '#ccc' }}>Email:</strong>{' '}
+                <a href="mailto:info@resurgenix.com" style={{ color: '#3b82f6' }}>info@resurgenix.com</a>
+              </p>
+              <p style={{ fontSize: '0.82rem', color: '#aaa', lineHeight: 1.8 }}>
+                <strong style={{ color: '#ccc' }}>Phone:</strong>{' '}
+                <a href="https://wa.me/919064731358" style={{ color: '#3b82f6' }}>+91 9064731358</a>
+              </p>
+              <p style={{ fontSize: '0.82rem', color: '#aaa', lineHeight: 1.8 }}>
+                <strong style={{ color: '#ccc' }}>Location:</strong> Kolkata, India
+              </p>
+            </div>
           </div>
 
           <div className="footer-col">
             <h4>Platform</h4>
             <ul>
               <li><a href="/#what-we-do">AI CCTV Hub</a></li>
-              <li><a href="/#what-we-do">Computer Vision Analytics</a></li>
-              <li><a href="/#what-we-do">Infrastructure Intelligence</a></li>
-              <li><a href="/#what-we-do">Automation &amp; Monitoring</a></li>
-              <li><a href="/#what-we-do">Custom AI Models</a></li>
+              <li><Link to="/cctv-automation-guide">CCTV Automation Guide</Link></li>
+              <li><Link to="/automating-industries">Automating Industries</Link></li>
+              <li><Link to="/qr-dining-solutions">QR Dining Solutions</Link></li>
+              <li><Link to="/blog">Industry Automation Blog</Link></li>
             </ul>
           </div>
 
@@ -44,7 +57,8 @@ export default function Footer() {
           <div className="footer-col">
             <h4>Company</h4>
             <ul>
-              <li><a href="/#hero">About</a></li>
+              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/blog">Blog</Link></li>
               <li><Link to="/reviews">Reviews</Link></li>
               <li><Link to="/careers">Careers</Link></li>
               <li><a href="/#consultation">Request Consultation</a></li>
@@ -53,7 +67,12 @@ export default function Footer() {
           </div>
 
           <div className="footer-col">
-            <h4>Inquiries</h4>
+            <h4>Legal</h4>
+            <ul>
+              <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+              <li><Link to="/terms-of-service">Terms of Service</Link></li>
+            </ul>
+            <h4 style={{ marginTop: '1.2rem' }}>Inquiries</h4>
             <ul>
               <li><a href="/#contact">Direct Contact</a></li>
               <li><a href="/#contact">Partnership</a></li>
