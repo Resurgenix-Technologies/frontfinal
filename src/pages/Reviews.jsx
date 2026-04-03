@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import SEO from '../components/SEO';
 import '../styles/reviews.css';
 
 const reviews = [
@@ -60,6 +61,31 @@ const reviews = [
   },
 ];
 
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Resurgenix AI CCTV Hub",
+  "brand": { "@type": "Brand", "name": "Resurgenix Technologies" },
+  "description": "AI-powered CCTV automation and computer vision analytics platform",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "bestRating": "5",
+    "ratingCount": "50",
+    "reviewCount": "8"
+  },
+  "review": reviews.map(r => ({
+    "@type": "Review",
+    "author": { "@type": "Person", "name": r.name },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": String(r.stars),
+      "bestRating": "5"
+    },
+    "reviewBody": r.text
+  }))
+};
+
 export default function Reviews() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -80,9 +106,16 @@ export default function Reviews() {
 
   return (
     <>
+      <SEO
+        title="Customer Reviews & Case Studies"
+        description="Read real reviews from organizations across Kolkata who transformed their CCTV infrastructure with Resurgenix Technologies AI-powered automation. 50+ active deployments, 4.8★ average rating, 98% client retention."
+        path="/reviews"
+        schema={reviewSchema}
+      />
+
       <div className="reviews-hero reveal">
         <span className="section-label">Client Stories</span>
-        <h1>What Our Clients Say</h1>
+        <h1>What Our Clients Say About Resurgenix AI CCTV Automation</h1>
         <p>
           Real experiences from organizations across Kolkata who've transformed
           their surveillance infrastructure with ResurgenixTechnologies.
@@ -105,20 +138,20 @@ export default function Reviews() {
 
       <div className="reviews-grid">
         {reviews.map((r, i) => (
-          <div className="review-card reveal" key={i}>
+          <article className="review-card reveal" key={i}>
             <div className="review-quote">"</div>
-            <div className="review-stars">
+            <div className="review-stars" aria-label={`${r.stars} out of 5 stars`}>
               {'★'.repeat(r.stars)}{'☆'.repeat(5 - r.stars)}
             </div>
             <div className="review-text">{r.text}</div>
             <div className="review-author">
-              <div className="review-avatar">{r.initials}</div>
+              <div className="review-avatar" aria-hidden="true">{r.initials}</div>
               <div>
                 <div className="review-author-name">{r.name}</div>
                 <div className="review-author-role">{r.role}</div>
               </div>
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </>

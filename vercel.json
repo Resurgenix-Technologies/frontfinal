@@ -1,8 +1,39 @@
 {
   "rewrites": [
+    { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
+    { "source": "/robots.txt", "destination": "/robots.txt" },
+    { "source": "/.well-known/llms.txt", "destination": "/.well-known/llms.txt" },
+    { "source": "/manifest.json", "destination": "/manifest.json" },
+    { "source": "/about", "destination": "/about/index.html" },
+    { "source": "/automating-industries", "destination": "/automating-industries/index.html" },
+    { "source": "/cctv-automation-guide", "destination": "/cctv-automation-guide/index.html" },
+    { "source": "/qr-dining-solutions", "destination": "/qr-dining-solutions/index.html" },
+    { "source": "/blog", "destination": "/blog/index.html" },
+    { "source": "/blog/industry-automation-trends-2026", "destination": "/blog/industry-automation-trends-2026/index.html" },
+    { "source": "/reviews", "destination": "/reviews/index.html" },
+    { "source": "/careers", "destination": "/careers/index.html" },
+    { "source": "/privacy-policy", "destination": "/privacy-policy/index.html" },
+    { "source": "/terms-of-service", "destination": "/terms-of-service/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "headers": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "source": "/robots.txt",
+      "headers": [
+        { "key": "Content-Type", "value": "text/plain; charset=utf-8" }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        { "key": "Content-Type", "value": "application/xml; charset=utf-8" }
+      ]
+    },
+    {
+      "source": "/.well-known/llms.txt",
+      "headers": [
+        { "key": "Content-Type", "value": "text/plain; charset=utf-8" }
+      ]
     }
   ]
 }

@@ -52,7 +52,7 @@ export default function WhatWeDo() {
           <div className="whatwedo-card reveal" key={i}>
             <div className="whatwedo-card-line"></div>
             <div className="whatwedo-img">
-              <img src={f.image} alt={f.title} />
+              <img src={f.image} alt={`${f.title} — Resurgenix Technologies AI CCTV Solution`} loading="lazy" />
               <div className="whatwedo-img-overlay"></div>
             </div>
             <div className="whatwedo-body">

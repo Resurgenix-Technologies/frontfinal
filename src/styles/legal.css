@@ -1,0 +1,105 @@
+/* ===== Legal Pages (Privacy Policy, Terms of Service) ===== */
+.legal-page {
+  padding: 10rem 2rem 5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.legal-content h1 {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.legal-updated {
+  color: var(--text-dim);
+  font-size: 0.82rem;
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.3px;
+}
+
+.legal-content section {
+  margin-bottom: 2.5rem;
+}
+
+.legal-content h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.legal-content h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+
+.legal-content p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.8;
+  margin-bottom: 0.8rem;
+}
+
+.legal-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 1rem;
+}
+
+.legal-content ul li {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.7;
+  padding: 0.3rem 0 0.3rem 1.2rem;
+  position: relative;
+}
+
+.legal-content ul li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.legal-content a {
+  color: var(--accent);
+  transition: opacity var(--transition);
+}
+
+.legal-content a:hover {
+  opacity: 0.8;
+}
+
+/* Breadcrumb reuse */
+.legal-page .breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.3px;
+}
+
+.legal-page .breadcrumb a {
+  color: var(--text-muted);
+  transition: color var(--transition);
+}
+
+.legal-page .breadcrumb a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 640px) {
+  .legal-page {
+    padding: 8rem 1.2rem 4rem;
+  }
+}

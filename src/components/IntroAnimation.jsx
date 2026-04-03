@@ -1,13 +1,12 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import '../styles/intro.css';
 
 export default function IntroAnimation({ onComplete }) {
-  const [phase, setPhase] = useState('idle');
+  const [hasPlayed] = useState(() => sessionStorage.getItem('introPlayed') === '1');
+  const [phase, setPhase] = useState(() => (hasPlayed ? 'done' : 'idle'));
 
   useEffect(() => {
-    // Check sessionStorage — only play once per session
-    if (sessionStorage.getItem('introPlayed')) {
-      setPhase('done');
+    if (hasPlayed) {
       if (onComplete) onComplete();
       return;
     }
@@ -21,10 +20,9 @@ export default function IntroAnimation({ onComplete }) {
     }, 2400);
 
     return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
-  }, [onComplete]);
+  }, [hasPlayed, onComplete]);
 
-  // If already played, render nothing
-  if (phase === 'done' && sessionStorage.getItem('introPlayed')) {
+  if (phase === 'done') {
     return null;
   }
 

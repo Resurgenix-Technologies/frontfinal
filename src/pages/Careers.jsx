@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { submitToSheet } from '../config/sheets';
+import SEO from '../components/SEO';
 import '../styles/careers.css';
 import '../styles/founders.css';
 import Toast from '../components/Toast';
@@ -45,6 +46,29 @@ const positions = [
   { title: 'Product Designer', type: 'Full-time', location: 'Remote', dept: 'Design' },
 ];
 
+const jobPostingSchema = positions.map(p => ({
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "title": p.title,
+  "employmentType": p.type === 'Full-time' ? "FULL_TIME" : "INTERN",
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": p.location.includes('Kolkata') ? "Kolkata" : "Remote",
+      "addressCountry": "IN"
+    }
+  },
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "Resurgenix Technologies Pvt. Ltd.",
+    "sameAs": "https://www.resurgenixtechnologies.com"
+  },
+  "datePosted": "2026-04-01",
+  "description": `${p.title} position in the ${p.dept} department at Resurgenix Technologies.`,
+  "industry": "Artificial Intelligence / Computer Vision"
+}));
+
 export default function Careers() {
   const [toast, setToast] = useState({ visible: false, message: '' });
 
@@ -79,10 +103,17 @@ export default function Careers() {
 
   return (
     <>
+      <SEO
+        title="Careers — Join Our AI & Computer Vision Team"
+        description="Join Resurgenix Technologies and help build the future of AI-powered CCTV automation. Open positions in Computer Vision, Full Stack Development, AI/ML Research, and more. Based in Kolkata with remote options."
+        path="/careers"
+        schema={jobPostingSchema}
+      />
+
       {/* Hero */}
       <div className="careers-hero reveal">
         <span className="section-label">Join Our Team</span>
-        <h1>Build the Future of Intelligent Infrastructure</h1>
+        <h1>Build the Future of Intelligent Infrastructure at Resurgenix Technologies</h1>
         <p>
           We're looking for passionate engineers, designers, and thinkers who
           want to transform how organizations use visual data. Join
@@ -105,7 +136,7 @@ export default function Careers() {
           {founders.map((f, i) => (
             <div className="founder-card reveal" key={i}>
               <div className="founder-img-wrapper">
-                <img src={f.image} alt={f.name} />
+                <img src={f.image} alt={`${f.name} — ${f.role} at Resurgenix Technologies`} loading="lazy" />
               </div>
               <div className="founder-name">{f.name}</div>
               <div className="founder-role">{f.role}</div>
@@ -117,7 +148,7 @@ export default function Careers() {
 
       {/* Open Positions */}
       <div className="careers-positions">
-        <h2 className="reveal">Open Positions</h2>
+        <h2 className="reveal">Open Positions at Resurgenix Technologies</h2>
         <div className="position-list">
           {positions.map((p, i) => (
             <div className="position-card reveal" key={i}>
@@ -149,22 +180,22 @@ export default function Careers() {
         <form className="careers-form reveal" onSubmit={handleSubmit}>
           <div className="form-row">
             <div className="form-group">
-              <label>Full Name *</label>
-              <input className="form-input" name="name" required />
+              <label htmlFor="career-name">Full Name *</label>
+              <input className="form-input" id="career-name" name="name" required />
             </div>
             <div className="form-group">
-              <label>Email *</label>
-              <input className="form-input" name="email" type="email" required />
+              <label htmlFor="career-email">Email *</label>
+              <input className="form-input" id="career-email" name="email" type="email" required />
             </div>
           </div>
           <div className="form-row">
             <div className="form-group">
-              <label>Phone</label>
-              <input className="form-input" name="phone" type="tel" />
+              <label htmlFor="career-phone">Phone</label>
+              <input className="form-input" id="career-phone" name="phone" type="tel" />
             </div>
             <div className="form-group">
-              <label>Position Applying For</label>
-              <select className="form-input" name="position">
+              <label htmlFor="career-position">Position Applying For</label>
+              <select className="form-input" id="career-position" name="position">
                 <option value="">Select position…</option>
                 {positions.map((p, i) => (
                   <option key={i} value={p.title}>{p.title}</option>
@@ -173,15 +204,15 @@ export default function Careers() {
             </div>
           </div>
           <div className="form-group">
-            <label>Resume / CV</label>
+            <label htmlFor="career-resume">Resume / CV</label>
             <div className="file-input-wrapper">
-              <input type="file" name="resume" accept=".pdf,.doc,.docx" />
+              <input type="file" id="career-resume" name="resume" accept=".pdf,.doc,.docx" />
               <div className="file-input-label">📎 Upload your resume (PDF, DOC)</div>
             </div>
           </div>
           <div className="form-group">
-            <label>Cover Letter / Message</label>
-            <textarea className="form-input" name="coverLetter" placeholder="Tell us why you're interested and what you bring…"></textarea>
+            <label htmlFor="career-cover">Cover Letter / Message</label>
+            <textarea className="form-input" id="career-cover" name="coverLetter" placeholder="Tell us why you're interested and what you bring…"></textarea>
           </div>
           <button type="submit" className="form-submit-btn">Submit Application →</button>
         </form>

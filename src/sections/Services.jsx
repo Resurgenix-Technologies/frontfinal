@@ -26,7 +26,7 @@ export default function Services() {
           <div className="service-card reveal" key={i}>
             <div className="service-card-accent"></div>
             <div className="service-img">
-              <img src={s.image} alt={s.title} />
+              <img src={s.image} alt={`AI CCTV Automation for ${s.title} — Resurgenix Technologies`} loading="lazy" />
               <div className="service-img-overlay"></div>
             </div>
             <div className="service-body">

@@ -1,0 +1,51 @@
+# Robots.txt for Resurgenix Technologies
+# https://www.resurgenixtechnologies.com
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /assets/*.js$
+Disallow: /assets/*.css$
+
+# Allow Google crawlers
+User-agent: Googlebot
+Allow: /
+
+# Allow Google AI (for AI Overviews)
+User-agent: Google-Extended
+Allow: /
+
+# Allow GPTBot (for ChatGPT search)
+User-agent: GPTBot
+Allow: /
+
+# Allow ClaudeBot (for Claude search)
+User-agent: ClaudeBot
+Allow: /
+
+# Allow Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Allow Bing
+User-agent: Bingbot
+Allow: /
+
+# Allow Apple
+User-agent: Applebot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+
+# Block harmful scrapers
+User-agent: Bytespider
+Disallow: /
+
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+# Sitemap
+Sitemap: https://www.resurgenixtechnologies.com/sitemap.xml

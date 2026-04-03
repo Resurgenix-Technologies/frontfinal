@@ -1,0 +1,44 @@
+# Resurgenix Technologies
+# https://www.resurgenixtechnologies.com
+
+> Resurgenix Technologies Pvt. Ltd. is an AI-powered technology company based in Kolkata, India that transforms traditional CCTV infrastructure into intelligent automation systems using advanced computer vision and real-time operational analytics.
+
+## About
+Resurgenix Technologies converts existing CCTV camera networks into intelligent sensing and automation platforms. Using proprietary AI and computer vision models, organizations can automate everyday processes, monitor environments in real-time, and generate actionable operational insights — without additional hardware.
+
+## Products & Services
+- **AI CCTV Hub**: Central platform for intelligent video analytics and automation
+- **Computer Vision Analytics**: Real-time movement, crowd, and behavior analysis
+- **Infrastructure Intelligence**: Smart environment monitoring and optimization
+- **Automation & Monitoring**: Automated attendance, access control, and alerts
+- **Custom AI Models**: Bespoke computer vision solutions for specific use cases
+- **QR Dining**: Smart contactless ordering platform for restaurants (qrdining.in)
+
+## Industries Served
+- Cafés & Restaurants: Customer flow, queue monitoring, service efficiency
+- Retail Stores: Foot traffic analysis, dwell time mapping, zone detection
+- Corporate Offices: Access monitoring, attendance, space utilization
+- Schools & Campuses: Attendance verification, crowd monitoring, safety
+- Hospitals & Healthcare: Patient flow, operational monitoring, safety
+- Industrial Facilities: Safety compliance, restricted zone monitoring
+- Smart Buildings: Occupancy analytics, facility management
+
+## Key Links
+- Homepage: https://www.resurgenixtechnologies.com/
+- About: https://www.resurgenixtechnologies.com/about
+- Reviews: https://www.resurgenixtechnologies.com/reviews
+- Careers: https://www.resurgenixtechnologies.com/careers
+- Contact: info@resurgenix.com | +91 9064731358
+
+## Leadership
+- Souryodipto Debnath — Founder & CEO
+- Anushka Mukherjee — Co-Founder & Creative Technologist
+- Avijit Bhadra — Co-Founder & CPO
+- Swapnil Shaw — Co-Founder & CIO
+- Souvik Dhar — Co-Founder & Operations Head
+
+## Location
+Kolkata, India
+
+## Founded
+2026
